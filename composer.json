@@ -1,0 +1,22 @@
+{
+  "name": "pbierans/container-integration",
+  "description": "If you want to integrate containers via magic methods.",
+  "license": "private, do not use me in production context at all",
+  "authors": [
+    {
+      "name": "Patrick Bierans",
+      "email": "pbierans@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "PatrickBierans\\ContainerIntegration\\": "src/"
+    }
+  },
+  "minimum-stability": "dev",
+  "require": {
+    "php": "^7.1",
+    "pbierans/container": "*"
+  }
+}
