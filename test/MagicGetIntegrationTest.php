@@ -1,21 +1,27 @@
-<?php /** @noinspection PhpUndefinedFieldInspection */
+<?php
 
-namespace PatrickBierans\ContainerIntegration;
+namespace {
+    include_once __DIR__ . '/mockup/MagicGet.php';
+}
 
-use PatrickBierans\Container\SolidContainer;
-use PHPUnit\Framework\TestCase;
+namespace PatrickBierans\ContainerIntegration {
 
-class MagicGetIntegrationTest extends TestCase {
+    use PatrickBierans\Container\SolidContainer;
+    use PatrickBierans\ContainerIntegration\Mockup\MagicGet;
+    use PHPUnit\Framework\TestCase;
 
-    use MagicGetIntegration;
+    class MagicGetIntegrationTest extends TestCase {
 
-    public function testMagicGet(): void {
-        $this->setMagicGetContainer(new SolidContainer([
-            'key' => 'value'
-        ]));
+        public function testMagicGet(): void {
+            $instance = new MagicGet();
 
-        $this->assertFalse($this->hasMagicGet(['undefined key']));
-        $this->assertTrue($this->hasMagicGet(['key']));
-        $this->assertEquals('value', $this->key);
+            $instance->setMagicGetContainer(new SolidContainer([
+                'key' => 'value'
+            ]));
+
+            $this->assertFalse($instance->hasMagicGet(['undefined key']));
+            $this->assertTrue($instance->hasMagicGet(['key']));
+            $this->assertEquals('value', $instance->key);
+        }
     }
 }

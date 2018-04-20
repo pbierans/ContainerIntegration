@@ -1,12 +1,7 @@
 <?php
 
-/** @noinspection SpellCheckingInspection */
-/** @noinspection PhpUndefinedMethodInspection */
-/** @noinspection PhpUnhandledExceptionInspection */
-
 namespace {
     include_once __DIR__ . '/mockup/MagicCall.php';
-    include_once __DIR__ . '/mockup/MagicGet.php';
 }
 
 namespace PatrickBierans\ContainerIntegration {
@@ -15,6 +10,10 @@ namespace PatrickBierans\ContainerIntegration {
     use PatrickBierans\ContainerIntegration\Mockup\MagicCall;
     use PHPUnit\Framework\TestCase;
 
+    /**
+     * Class MagicCallIntegrationTest
+     * @package PatrickBierans\ContainerIntegration
+     */
     class MagicCallIntegrationTest extends TestCase {
 
         /**

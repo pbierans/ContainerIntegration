@@ -2,8 +2,14 @@
 
 namespace PatrickBierans\ContainerIntegration\Mockup;
 
-use PatrickBierans\ContainerIntegration\MagicCallIntegration;
+use PatrickBierans\Container\SolidContainer;
+use PatrickBierans\ContainerIntegration\MagicGetIntegration;
 
+/**
+ * @property string key
+ * @method setMagicGetContainer(SolidContainer $Container): void
+ * @method hasMagicGet(array $keys):bool
+ */
 class MagicGet {
-    use MagicCallIntegration;
+    use MagicGetIntegration;
 }
